@@ -22,7 +22,11 @@
     <main>
         <div>
             <h2>About Me</h2>
-            <img src="images/placeholder_photo.jpg" alt="Photo of myself">
+            <picture>
+                <source media="(max-width: 600px)" srcset="photo.jpg">
+                <img src="images/placeholder_photo.jpg" alt="Photo of myself">
+            </picture>
+            
             <p>Hello! I am a computer science student aspriring to become a software developer.
             Currently, I live in Monterey Park, California.</p>
         </div>
