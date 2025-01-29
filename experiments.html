@@ -60,6 +60,9 @@
                 <summary>[Summarized Info]</summary>
                 <p>[Detailed Info]</p>
             </details>
+            <abbr title="Abbreviation">Abbr</abbr><br>
+            <dfn>[Term to be defined]</dfn><br>
+            <kbd>Ctrl</kbd>
             <br>
             <pre>Pre</pre> 
             <dialog open>
@@ -130,6 +133,7 @@
                 let clone = tag.content.cloneNode(true);
                 document.getElementById("paste-area").appendChild(clone);
             </script>
+            <noscript>Can't HELLO WORLD</noscript>
 
             <hello-world-tag></hello-world-tag>
 
@@ -142,6 +146,7 @@
                 }
                 customElements.define("hello-world-tag", HWT);
             </script>
+            <noscript>Can't hello world</noscript>
         </article>
         <hr>
         <article>
@@ -169,6 +174,11 @@
                     <td>C</td>
                 </tr>
             </table>
+            <br>
+            <dl>
+                <dt>Term</dt>
+                <dd>Definition</dd>
+            </dl>
             
         </article>
         
