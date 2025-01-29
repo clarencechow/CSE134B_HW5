@@ -101,6 +101,20 @@
                 <p>[Detailed Info]</p>
             </details>
         </article>
+        <hr>
+        <article>
+            <h2>Hello World Template</h2>
+
+            <template id="hello-world">
+                <b>HELLO WORLD</b>
+            </template>
+            
+            <script>
+                let tag = document.getElementsByTagName("hello-world")[0];
+                let clon = temp.content.cloneNode(true);
+                document.body.appendChild(clon);
+            </script>
+        </article>
     </main>
     <footer>
         <p>&copy; 2025 Clarence Chow. All Rights Reserved.</p>
