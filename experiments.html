@@ -105,15 +105,23 @@
         <article>
             <h2>Hello World Template</h2>
 
+            <div id="paste-area"></div>
+
             <template id="hello-world">
                 <b>HELLO WORLD</b>
             </template>
             
             <script>
-                let tag = document.getElementsByTagName("hello-world")[0];
+                let tag = document.getElementById("hello-world");
                 let clone = tag.content.cloneNode(true);
-                document.body.appendChild(clone);
+                document.getElementById("paste-area").appendChild(clone);
             </script>
+        </article>
+        <hr>
+        <article>
+            <h2>Tables</h2>
+            
+            
         </article>
     </main>
     <footer>
