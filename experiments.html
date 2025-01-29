@@ -116,6 +116,18 @@
                 let clone = tag.content.cloneNode(true);
                 document.getElementById("paste-area").appendChild(clone);
             </script>
+
+            <hello-world-tag></hello-world-tag>
+
+            <script>
+                class HWT extends HTMLElement {
+                    constructor() {
+                        super();
+                        this.innerHTML = "hello world";
+                    }
+                }
+                customElements.define("hello-world-tag", HWT);
+            </script>
         </article>
         <hr>
         <article>
