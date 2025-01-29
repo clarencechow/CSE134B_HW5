@@ -111,6 +111,7 @@
             
             <script>
                 let tag = document.getElementsByTagName("hello-world")[0];
+                let clon = tag.content.cloneNode(true);
                 document.body.appendChild(tag);
             </script>
         </article>
