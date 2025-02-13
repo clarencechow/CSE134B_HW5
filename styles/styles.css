@@ -21,8 +21,9 @@ ul li a {
   padding: 15px 20px;
   width: 75px;
   text-decoration: none;
-  color: transparent;
+  color: black;
   border-radius: 50%;
+  background-color: transparent;
   font-weight: bold;
   display: flex;
   justify-content: center;
