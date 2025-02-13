@@ -25,10 +25,38 @@ ul li a {
   transition: background 0.3s;
 }
 
-ul li a:hover {
-  background-color: #666;
+/* Home button colors */
+ul li:nth-child(1) a {
+  background-color: #76FF7A;
 }
 
-ul li a.active {
-  background-color: #007bff;
+ul li:nth-child(1) a:hover {
+  background-color: #32CD32;
+}
+
+/* Project button colors */
+ul li:nth-child(2) a {
+  background-color: #FFD580;
+}
+
+ul li:nth-child(2) a:hover {
+  background-color: #FFAC1C;
+}
+
+/* Resume button colors */
+ul li:nth-child(3) a {
+  background-color: #6699CC;
+}
+
+ul li:nth-child(3) a:hover {
+  background-color: #3457D5;
+}
+
+/* Experiment button colors */
+ul li:nth-child(4) a {
+  background-color: #F0E68C;
+}
+
+ul li:nth-child(4) a:hover {
+  background-color: #FFD700;
 }
