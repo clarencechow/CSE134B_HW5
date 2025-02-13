@@ -6,7 +6,7 @@ header, ul {
   justify-content: space-between;
   align-items: center;
   background-color: #333;
-  color: grey;
+  color: transparent;
 }
 
 header h1 {
