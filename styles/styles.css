@@ -18,11 +18,12 @@ header h1 {
 ul li a {
   display: block;
   padding: 15px 20px;
-  width: 100px;
+  width: 80px;
   text-decoration: none;
   color: black;
   font-weight: bold;
-  background-color: #444;
+  display: flex;
+  justify-content: center;
   border-radius: 5px 5px 0 0;
   transition: background 0.3s;
 }
