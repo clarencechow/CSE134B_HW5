@@ -24,7 +24,7 @@ ul li a {
   font-weight: bold;
   display: flex;
   justify-content: center;
-  border: none;
+  border-radius: 50%;
   transition: background 0.3s;
 }
 
