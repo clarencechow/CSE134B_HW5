@@ -4,7 +4,7 @@ header, ul {
   margin: 0;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: space-between;
   background-color: #333;
   color: grey;
 }
@@ -16,16 +16,15 @@ header h1 {
 }
 
 ul li a {
+  margin-right: 5px;
   display: block;
   padding: 15px 20px;
-  width: 80px;
+  width: 75px;
   text-decoration: none;
   color: black;
   font-weight: bold;
   display: flex;
   justify-content: center;
-  border-radius: 50%;
-  border-color: transparent transparent;
   transition: background 0.3s;
 }
 
