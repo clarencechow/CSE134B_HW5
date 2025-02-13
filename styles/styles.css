@@ -18,6 +18,7 @@ header h1 {
 ul li a {
   display: block;
   padding: 15px 20px;
+  width: 100px;
   text-decoration: none;
   color: black;
   font-weight: bold;
@@ -50,7 +51,7 @@ ul li:nth-child(3) a {
 }
 
 ul li:nth-child(3) a:hover {
-  background-color: #3457D5;
+  background-color: #318CE7;
 }
 
 /* Experiment button colors */
