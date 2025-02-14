@@ -62,3 +62,12 @@ ul li:nth-child(4) a:hover {
   background-color: #FFD700;
 }
 
+h2, h3 {
+  margin-left: 20px;
+  width: 100vw;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
