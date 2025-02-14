@@ -1,4 +1,4 @@
-header, ul {
+header, ul, div, section {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -6,7 +6,7 @@ header, ul {
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-  color: grey;
+  color: black;
 }
 
 header h1 {
@@ -34,7 +34,6 @@ ul li a {
 ul li:nth-child(1) a {
   background-color: #76FF7A;
 }
-
 ul li:nth-child(1) a:hover {
   background-color: #32CD32;
 }
@@ -43,7 +42,6 @@ ul li:nth-child(1) a:hover {
 ul li:nth-child(2) a {
   background-color: #FFD580;
 }
-
 ul li:nth-child(2) a:hover {
   background-color: #FFAC1C;
 }
@@ -52,7 +50,6 @@ ul li:nth-child(2) a:hover {
 ul li:nth-child(3) a {
   background-color: #6495ED;
 }
-
 ul li:nth-child(3) a:hover {
   background-color: #318CE7;
 }
@@ -61,7 +58,7 @@ ul li:nth-child(3) a:hover {
 ul li:nth-child(4) a {
   background-color: #F0E68C;
 }
-
 ul li:nth-child(4) a:hover {
   background-color: #FFD700;
 }
+
