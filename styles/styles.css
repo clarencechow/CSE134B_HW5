@@ -71,7 +71,7 @@ ul li:nth-child(4) a:hover {
 /* Home page specific adjustments */
 h2, h3 {
   margin-left: 20px;
-  width: 100vw;
+  width: 95vw;
 }
 
 div, section {
