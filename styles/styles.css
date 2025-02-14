@@ -74,7 +74,7 @@ h2, h3 {
   width: 100vw;
 }
 
-div {
+div, section {
   justify-content: flex-start;
 }
 
