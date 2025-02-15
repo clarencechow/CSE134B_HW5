@@ -37,18 +37,18 @@ header, ul, div, section {
     justify-content: center;
     transition: background 0.3s;
   }
+}
 
-  li a:hover {
-    animation: circle-rect 0.3s forwards ease-in-out;
+ul li a:hover {
+  animation: circle-rect 0.3s forwards ease-in-out;
+}
+
+@keyframes circle-rect {
+  0% {
+    transform: scale(1) border-radius(50%);
   }
-
-  @keyframes circle-rect {
-    0% {
-      transform: scale(1) border-radius(50%);
-    }
-    100% {
-      transform: scale(1.2) border-radius(10%);
-    }
+  100% {
+    transform: scale(1.2) border-radius(10%);
   }
 }
 
