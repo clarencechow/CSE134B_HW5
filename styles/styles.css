@@ -183,7 +183,7 @@ iframe {
   height: 60vw
 }
 
-main.resume {
+main:has(+ iframe) {
   display: flex;
   justify-content: center;
 }
