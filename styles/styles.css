@@ -40,10 +40,10 @@ header, ul, div, section {
 }
 
 ul li a:hover {
-  animation: circle-rect 0.3s forwards ease-in-out;
+  animation: morphShape 0.3s forwards ease-in-out;
 }
 
-@keyframes circle-rect {
+@keyframes morphShape {
   0% {
     transform: scale(1) border-radius(50%);
   }
@@ -62,9 +62,17 @@ header h1 {
   color: black;
 }
 
-body {
-  font-size: 20px;
+/*@font-face {
+  font-family: 'Artifika';
+  src: url('fonts/MyCustomFont.woff2') format('woff2'),
+       url('fonts/MyCustomFont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
+
+header {
+  font-size: 20px;
+} */
 
 
 
