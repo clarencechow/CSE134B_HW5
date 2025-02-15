@@ -35,6 +35,10 @@ ul li a {
   transition: background 0.3s;
 }
 
+body {
+  font-size: 1vw;
+}
+
 /* Home button colors */
 ul li:nth-child(1) a {
   background-color: #76FF7A;
@@ -75,7 +79,7 @@ h2, h3 {
 }
 
 div, section {
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 picture {
