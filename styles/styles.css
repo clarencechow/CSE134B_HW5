@@ -183,7 +183,10 @@ main:has(iframe) {
   justify-content: center;
   iframe {
     width: 60vw;
-    height: 100%;
+    height: 120vh;
+  }
+  @media (max-width: 768px) {
+    
   }
 }
 
