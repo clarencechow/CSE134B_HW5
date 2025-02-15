@@ -217,10 +217,10 @@ main.single-project {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10rem;
+  gap: 10rem 5rem;
 
   p {
-    width: 20vw;
+    width: 45vw;
     display: flex;
     flex-wrap: wrap;
   }
