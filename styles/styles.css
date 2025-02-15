@@ -76,7 +76,7 @@ header h1 {
 }
 
 header {
-  font: 'Artifika';
+  font-family: 'Artifika', 'Times New Roman', sans-serif;
 }
 
 
