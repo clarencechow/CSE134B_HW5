@@ -185,12 +185,13 @@ main:has(iframe) {
     width: 60vw;
     height: 120vh;
   }
-}
-
-@media (max-width: 768px) {
-  iframe {
-    width: 100vw;
-    height: 90vh;
+  @media (max-width: 1000px) {
+    iframe {
+      width: 100vw;
+      height: 90vh;
+    }
   }
 }
+
+
 
