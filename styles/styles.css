@@ -79,7 +79,8 @@ h2, h3 {
 }
 
 div, section {
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 5rem;
 }
 
 picture {
@@ -94,7 +95,7 @@ p {
 }
 
 address {
-  margin-left: 20px;
+  margin-left: 5em;
 }
 
 form {
