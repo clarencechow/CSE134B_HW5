@@ -12,6 +12,7 @@
   --experiment-b: #FFD700;
 }
 
+/* color-gamut test on experiment tab */
 @media (color-gamut: rec2020) {
   :root {
     --experiment-b: color(rec2020 1 0.85 0.1);
@@ -120,7 +121,7 @@ ul li:nth-child(4) a:hover {
 
 /* Home page specific adjustments */
 h2, h3 {
-  margin-left: 20px;
+  margin-left: 1rem;
   width: 95vw;
 }
 
@@ -130,7 +131,13 @@ div, section {
 }
 
 picture {
-  margin-left: 20px;
+  margin-left: 1rem;
+}
+
+@media (max-width: 1000px) {
+  h2, h3, picture {
+    margin-left: 0.5rem;
+  }
 }
 
 p {
