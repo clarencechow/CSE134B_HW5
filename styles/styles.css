@@ -136,7 +136,10 @@ picture {
 
 @media (max-width: 1000px) {
   h2, h3, picture {
-    margin-left: 0.5rem;
+    margin-left: 0;
+  }
+  div {
+    margin-left: 3rem;
   }
 }
 
