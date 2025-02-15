@@ -186,7 +186,10 @@ main:has(iframe) {
     height: 120vh;
   }
   @media (max-width: 768px) {
-    
+    iframe {
+      width: 100vw;
+      height: 90vh;
+    }
   }
 }
 
