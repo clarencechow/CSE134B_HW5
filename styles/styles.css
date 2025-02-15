@@ -140,7 +140,7 @@ button:hover {
   background: #45a049;
 }
 
-/* Project page specific */
+/* Projects page specific */
 ol li {
   display: flex;
   align-items: center;
@@ -153,6 +153,14 @@ ol li {
 
 ol li a:hover {
   background: #ffcc80;
+}
+
+/* Single project page specific */
+main.single-project {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5rem;
 }
 
 /* Resume page specific */
