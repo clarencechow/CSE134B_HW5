@@ -70,9 +70,7 @@ header h1 {
 
 @font-face {
   font-family: 'Artifika';
-  src: url('fonts/Artifika-Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
+  src: url('../fonts/Artifika-Regular.ttf');
 }
 
 header {
