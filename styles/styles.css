@@ -12,6 +12,10 @@
   --experiment-b: #FFD700;
 }
 
+body {
+  font-size: 20px;
+}
+
 header, ul, div, section {
   list-style: none;
   padding: 0;
@@ -64,19 +68,17 @@ header h1 {
   color: black;
 }
 
-/*@font-face {
+@font-face {
   font-family: 'Artifika';
-  src: url('fonts/MyCustomFont.woff2') format('woff2'),
+  src: url('fonts/Artifika-Regular.ttf'),
        url('fonts/MyCustomFont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 header {
-  font-size: 20px;
-} */
-
-
+  font: 'Artifika';
+}
 
 
 /* Home button colors */
