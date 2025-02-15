@@ -140,4 +140,10 @@ button:hover {
   background: #45a049;
 }
 
+/* Resume page specific */
+iframe {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
 
