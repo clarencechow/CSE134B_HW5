@@ -144,6 +144,9 @@ button:hover {
 iframe {
   width: 80vw;
   height: 60vw
+}
+
+main.resume {
   display: flex;
   justify-content: center;
 }
