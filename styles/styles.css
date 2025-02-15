@@ -1,3 +1,17 @@
+:root {
+  --home-a: #76FF7A;
+  --home-b: #32CD32;
+
+  --project-a: #FFD580;
+  --project-b: #FFAC1C;
+
+  --resume-a: #6495ED;
+  --resume-b: #318CE7;
+
+  --experiment-a: #F0E68C;
+  --experiment-b: #FFD700;
+}
+
 header, ul, div, section {
   list-style: none;
   padding: 0;
@@ -41,34 +55,34 @@ body {
 
 /* Home button colors */
 ul li:nth-child(1) a {
-  background-color: #76FF7A;
+  background-color: var(--home-a, lightgreen);
 }
 ul li:nth-child(1) a:hover {
-  background-color: #32CD32;
+  background-color: var(--home-b, green);
 }
 
 /* Project button colors */
 ul li:nth-child(2) a {
-  background-color: #FFD580;
+  background-color: var(--project-a, lightsalmon);
 }
 ul li:nth-child(2) a:hover {
-  background-color: #FFAC1C;
+  background-color: var(--project-b, orange);
 }
 
 /* Resume button colors */
 ul li:nth-child(3) a {
-  background-color: #6495ED;
+  background-color: var(--resume-a, lightblue);
 }
 ul li:nth-child(3) a:hover {
-  background-color: #318CE7;
+  background-color: var(--resume-b, blue);
 }
 
 /* Experiment button colors */
 ul li:nth-child(4) a {
-  background-color: #F0E68C;
+  background-color: var(--experiment-a, lightyellow);
 }
 ul li:nth-child(4) a:hover {
-  background-color: #FFD700;
+  background-color: var(--experiment-b, yellow);
 }
 
 
