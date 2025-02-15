@@ -12,6 +12,12 @@
   --experiment-b: #FFD700;
 }
 
+@media (color-gamut: rec2020) {
+  :root {
+    --experiment-b: color(rec2020 1 0.85 0.1);
+  }
+}
+
 body {
   font-size: 20px;
 }
