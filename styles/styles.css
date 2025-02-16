@@ -225,7 +225,7 @@ main.single-project {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  gap: 2rem 10rem;
+  gap: 2rem 8rem;
 
   p {
     width: 45vw;
