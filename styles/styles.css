@@ -27,7 +27,7 @@ html, body {
   font-size: 20px;
 }
 
-main {
+.main-content {
   flex: 1;
 }
 
