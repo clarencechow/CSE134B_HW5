@@ -28,7 +28,7 @@ body {
 }
 
 main {
-  flex: 1; /* Pushes footer to the bottom */
+  flex: 1
 }
 
 header, ul, div, section {
