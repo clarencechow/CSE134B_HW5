@@ -27,8 +27,8 @@ body {
   font-size: 20px;
 }
 
-main {
-  flex: 1
+.main-content {
+  flex: 1;
 }
 
 header, ul, div, section {
