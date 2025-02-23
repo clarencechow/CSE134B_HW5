@@ -204,6 +204,12 @@ button:hover {
   background: #45a049;
 }
 
+output {
+  display: block;
+  font-size: 0.8em;
+  color: red;
+}
+
 /* Projects page specific */
 ol li {
   display: flex;
