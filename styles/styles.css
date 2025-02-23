@@ -207,6 +207,10 @@ button:hover {
 output {
   display: block;
   font-size: 0.8em;
+  
+}
+
+output.error {
   color: red;
 }
 
