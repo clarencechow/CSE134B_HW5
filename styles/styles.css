@@ -273,12 +273,12 @@ main:has(iframe) {
 
 input:required:invalid,
 textarea:required:invalid {
-  border: 2px solid red;
+  border: 3px solid red;
 }
 
 input:valid,
 textarea:valid {
-  border: 2px solid green;
+  border: 3px solid green;
 }
 
 input:invalid::placeholder,
