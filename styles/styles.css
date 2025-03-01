@@ -266,3 +266,32 @@ main:has(iframe) {
 
 
 
+
+
+
+
+
+input:required:invalid,
+textarea:required:invalid {
+  border: 2px solid red;
+}
+
+input:valid,
+textarea:valid {
+  border: 2px solid green;
+}
+
+input:invalid::placeholder,
+textarea:invalid::placeholder {
+  color: red;
+  font-style: italic;
+}
+
+input:required::before {
+  content: "*";
+  color: red;
+  font-weight: bold;
+}
+
+
+
