@@ -76,14 +76,15 @@
         const warningThreshold = 450;
 
         document.getElementById('contactForm').addEventListener('submit', (e) => {
-            form_errors = [];
             const form = e.target;
         
             ['name', 'email', 'message'].forEach(validateField);
         
             if (!form.checkValidity()) {
                 e.preventDefault();
+            } else {
                 document.getElementById('formErrors').value = JSON.stringify(form_errors);
+                form_errors = [];
             }
         });
         
