@@ -7,14 +7,24 @@
     <link rel="canonical" href="https://clarencechow-cse134b.netlify.app/">
     <link rel="stylesheet" href="styles/styles.css">
     <title>Home</title>
+    
 </head>
 <body style="background-color:#c7ffc7;">
     <header style="background-color:#76FF7A;">
         <h1>Clarence's Website</h1>
+        
         <ul>
             <li><button id="light" on="true" onclick="lightMode()">☀️</button></li>
             <li><button id="dark" on="false" onclick="darkMode()">🌙</button></li>
         </ul>
+        <noscript>
+            <style>
+                #light, #dark {
+                    display: none;
+                }
+            </style>
+        </noscript>
+        
         <nav>
             <ul>
                 <li><a href="index.html" style="background-color:#32CD32;border-radius:0%;">Home</a></li>
