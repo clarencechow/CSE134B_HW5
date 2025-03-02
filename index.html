@@ -90,7 +90,7 @@
         
         function validateField(fieldId) {
             const field = document.getElementById(fieldId);
-            const errorOutput = document.getElementById(`${fieldId}Error`);
+            const errorOutput = document.getElementById(`error`);
         
             if (!field.checkValidity()) {
                 errorOutput.textContent = field.validationMessage;
