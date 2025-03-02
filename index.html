@@ -142,6 +142,33 @@
                 infoOutput.style.color = 'green';
             }
         }
+
+        /* Light and Dark Mode */
+        let mode = "light";
+        if(localStorage.getItem("mode") == "dark")
+            darkMode();
+        else
+            localStorage.setItem("mode", "light");
+
+        function lightMode() {
+            if(mode == "light")
+                break;
+
+            console.log("go light mode now");
+            
+            mode = "light";
+            localStorage.setItem("mode", "light");
+        }
+
+        function darkMode() {
+            if(mode == "dark")
+                break;
+
+            console.log("go dark mode now");
+            
+            mode = "dark";
+            localStorage.setItem("mode", "dark");
+        }
     </script>
 </body>
 </html>
