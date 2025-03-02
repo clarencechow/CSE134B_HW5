@@ -38,7 +38,7 @@
         <section>
             <h3>Contact Me</h3>
             
-            <form action="https://httpbin.org/post" method="post">
+            <form id="contactForm" action="https://httpbin.org/post" method="post">
                 <fieldset>
                     <legend>Get in Touch!</legend>
                     <label for="name">Name:</label>
@@ -51,8 +51,10 @@
                     <textarea id="message" name="message" rows="5" required
                         minlength="1" maxlength="500" pattern="[a-zA-Z0-9\s.,!?'-]"></textarea>
                     
-                    <output class="error"></output>
-                    <output class="info"></output>
+                    <output id="error"></output>
+                    <output id="info"></output>
+
+                    <input type="hidden" name="form-errors" id="formErrors" value="">
                     
                     <button type="submit">Send</button>
                 </fieldset>
@@ -67,5 +69,74 @@
     <footer>
         <p>&copy; 2025 Clarence Chow. All Rights Reserved.</p>
     </footer>
+    <script>
+        let form_errors = [];
+        const allowedPattern = /^[a-zA-Z0-9\s.,!?'-]+$/;
+        const maxCommentLength = 500;
+        const warningThreshold = 450;
+
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            form_errors = [];
+            const form = e.target;
+        
+            ['name', 'email', 'message'].forEach(validateField);
+        
+            if (!form.checkValidity()) {
+                e.preventDefault();
+                document.getElementById('formErrors').value = JSON.stringify(form_errors);
+            }
+        });
+        
+        function validateField(fieldId) {
+            const field = document.getElementById(fieldId);
+            const errorOutput = document.getElementById(`${fieldId}Error`);
+        
+            if (!field.checkValidity()) {
+                errorOutput.textContent = field.validationMessage;
+                errorOutput.style.opacity = 1;
+                logError(fieldId, field.validationMessage);
+                setTimeout(() => errorOutput.style.opacity = 0, 2000);
+            } else {
+                errorOutput.textContent = '';
+            }
+        }
+        
+        function logError(field, message) {
+            form_errors.push({ field, message });
+        }
+        
+        const commentsField = document.getElementById('message');
+        commentsField.addEventListener('input', (e) => {
+            const { value } = e.target;
+            if (!allowedPattern.test(value) && value !== '') {
+                e.target.classList.add('error-flash');
+                const errorOutput = document.getElementById('error');
+                errorOutput.textContent = 'Illegal character \'' + value + '\' entered!';
+                logError('comments', 'Illegal character \'' + value + '\' entered.');
+                setTimeout(() => {
+                    e.target.classList.remove('error-flash');
+                    errorOutput.textContent = '';
+                }, 2000);
+                e.target.value = value.replace(/[^a-zA-Z0-9\s.,!?'-]+/g, '');
+            }
+            updateCommentLength(value.length);
+        });
+        
+        function updateCommentLength(length) {
+            const infoOutput = document.getElementById('info');
+            const remaining = maxCommentLength - length;
+        
+            infoOutput.textContent = `${remaining} characters remaining`;
+        
+            if (remaining < 0) {
+                infoOutput.style.color = 'red';
+                logError('message', 'Message exceeds maximum length.');
+            } else if (remaining < (maxCommentLength - warningThreshold)) {
+                infoOutput.style.color = 'orange';
+            } else {
+                infoOutput.style.color = 'green';
+            }
+        }
+    </script>
 </body>
 </html>
