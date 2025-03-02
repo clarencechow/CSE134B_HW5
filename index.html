@@ -160,7 +160,7 @@
             const darkButton = getElementById("dark");
 
             body.style.color = "black";
-            body.style.background-color = "#c7ffc7";
+            body.style.setProperty("--background-color", "#c7ffc7");
 
             lightButton.setAttribute("on", "true");
             darkButton.setAttribute("on", "false");
@@ -179,7 +179,7 @@
             const darkButton = getElementById("dark");
 
             body.style.color = "white";
-            body.style.background-color = "#006602";
+            body.style.setProperty("--background-color", "#006602");
 
             lightButton.setAttribute("on", "false");
             darkButton.setAttribute("on", "true");
