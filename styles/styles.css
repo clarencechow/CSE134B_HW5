@@ -40,7 +40,6 @@ header, ul, div, section {
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-  color: black;
 
   li a {
     margin-right: 5px;
