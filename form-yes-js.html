@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="No JS">
+    <meta name="author" content="Clarence Chow">
+    <style>
+      form {
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      input, textarea {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      
+      textarea {
+        height: 100px;
+        resize: none;
+      }
+      
+      button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        color: white;
+        background: #4CAF50;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background: #45a049;
+      }
+      
+      output {
+        display: block;
+        min-height: 20px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+      }
+      
+      output.error {
+        color: red;
+      }
+            
+      input:required:invalid,
+      textarea:required:invalid {
+        border: 2px solid red;
+      }
+      
+      input:valid,
+      textarea:valid {
+        border: 2px solid green;
+      }
+      
+      input:invalid::placeholder,
+      textarea:invalid::placeholder {
+        color: red;
+        font-style: italic;
+      }
+      
+      input:required::before {
+        content: "*";
+        color: red;
+        font-weight: bold;
+      }
+
+      .error-flash {
+          animation: flash 0.5s alternate 2;
+      }
+      
+      @keyframes flash {
+          from {
+              background-color: rgba(255, 0, 0, 0.1);
+          }
+          to {
+              background-color: rgba(255, 0, 0, 0.3);
+          }
+      }
+    </style>
+    <title>Home</title>
+</head>
+<body style="background-color:#c7ffc7;">
+    <header style="background-color:#76FF7A;">
+        <h1>No JS Form</h1>
+    </header>
+    <main>
+        <section>
+            <form action="https://httpbin.org/post" method="post">
+                <fieldset>
+                    <legend>Get in Touch!</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required minlength="2" maxlength="50">
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required
+                        minlength="1" maxlength="500" pattern="^[a-zA-Z0-9\s.,!?'-]+$"></textarea>
+                    
+                    <output class="error"></output>
+                    <output class="info"></output>
+                    
+                    <button type="submit">Send</button>
+                </fieldset>
+            </form>  
+        </section>
+    </main>
+    <script>
+        let form_errors = [];
+        const allowedPattern = /^[a-zA-Z0-9\s.,!?'-]+$/;
+        const maxCommentLength = 500;
+        const warningThreshold = 450;
+
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            const form = e.target;
+        
+            ['name', 'email', 'message'].forEach(validateField);
+        
+            if (!form.checkValidity()) {
+                e.preventDefault();
+            } else {
+                document.getElementById('formErrors').value = JSON.stringify(form_errors);
+                form_errors = [];
+            }
+        });
+        
+        function validateField(fieldId) {
+            const field = document.getElementById(fieldId);
+            const errorOutput = document.getElementById(`error`);
+        
+            if (!field.checkValidity()) {
+                errorOutput.textContent = field.validationMessage;
+                errorOutput.style.opacity = 1;
+                logError(fieldId, field.validationMessage);
+                setTimeout(() => errorOutput.style.opacity = 0, 2000);
+            } else {
+                errorOutput.textContent = '';
+            }
+        }
+        
+        function logError(field, message) {
+            form_errors.push({ field, message });
+        }
+        
+        const commentsField = document.getElementById('message');
+        commentsField.addEventListener('input', (e) => {
+            const { value } = e.target;
+            if (!allowedPattern.test(value) && value !== '') {
+                e.target.classList.add('error-flash');
+                const errorOutput = document.getElementById('error');
+                errorOutput.textContent = 'Illegal character \'' + value[value.length-1] + '\' entered!';
+                logError('comments', 'Illegal character \'' + value[value.length-1] + '\' entered.');
+                setTimeout(() => {
+                    e.target.classList.remove('error-flash');
+                    errorOutput.textContent = '';
+                }, 2000);
+                e.target.value = value.replace(/[^a-zA-Z0-9\s.,!?'-]+/g, '');
+            }
+            updateCommentLength(value.length);
+        });
+        
+        function updateCommentLength(length) {
+            const infoOutput = document.getElementById('info');
+            const remaining = maxCommentLength - length;
+        
+            infoOutput.textContent = `${remaining} characters remaining`;
+        
+            if (remaining < 0) {
+                infoOutput.style.color = 'red';
+                logError('message', 'Message exceeds maximum length.');
+            } else if (remaining < (maxCommentLength - warningThreshold)) {
+                infoOutput.style.color = 'orange';
+            } else {
+                infoOutput.style.color = 'green';
+            }
+        }
+    </script>
+  </body>
+</html>
