@@ -74,7 +74,7 @@ button#dark {
   background-color: #918300;
 }
 
-li button[on="false"] {
+button#light[on="false"], button#dark[on="false"] {
   background-color: transparent;
 }
 
