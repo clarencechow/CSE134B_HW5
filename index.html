@@ -155,6 +155,15 @@
                 return;
 
             console.log("go light mode now");
+            const body = getElementsByTagName("body").item(0);
+            const lightButton = getElementById("light");
+            const darkButton = getElementById("dark");
+
+            body.style.color = "black";
+            body.style.background-color = "#c7ffc7";
+
+            lightButton.setAttribute("on", "true");
+            darkButton.setAttribute("on", "false");
             
             mode = "light";
             localStorage.setItem("mode", "light");
@@ -165,7 +174,16 @@
                 return;
 
             console.log("go dark mode now");
-            
+            const body = getElementsByTagName("body").item(0);
+            const lightButton = getElementById("light");
+            const darkButton = getElementById("dark");
+
+            body.style.color = "white";
+            body.style.background-color = "#006602";
+
+            lightButton.setAttribute("on", "false");
+            darkButton.setAttribute("on", "true");
+
             mode = "dark";
             localStorage.setItem("mode", "dark");
         }
