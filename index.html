@@ -165,15 +165,12 @@
                 return;
 
             console.log("go light mode now");
-            const main = document.getElementsByTagName("main").item(0);
-            const footer = document.getElementsByTagName("footer").item(0);
+            const body = document.getElementsByTagName("body").item(0);
             const lightButton = document.getElementById("light");
             const darkButton = document.getElementById("dark");
 
-            main.style.color = "black";
-            main.style.backgroundColor = "#c7ffc7";
-            footer.style.color = "black";
-            footer.style.backgroundColor = "#c7ffc7";
+            body.style.color = "black";
+            body.style.backgroundColor = "#c7ffc7";
 
             lightButton.setAttribute("on", "true");
             darkButton.setAttribute("on", "false");
@@ -187,15 +184,12 @@
                 return;
 
             console.log("go dark mode now");
-            const main = document.getElementsByTagName("main").item(0);
-            const footer = document.getElementsByTagName("footer").item(0);
+            const body = document.getElementsByTagName("body").item(0);
             const lightButton = document.getElementById("light");
             const darkButton = document.getElementById("dark");
 
-            main.style.color = "white";
-            main.style.backgroundColor = "#006602";
-            footer.style.color = "white";
-            footer.style.backgroundColor = "#006602";
+            body.style.color = "white";
+            body.style.backgroundColor = "#006602";
 
             lightButton.setAttribute("on", "false");
             darkButton.setAttribute("on", "true");
