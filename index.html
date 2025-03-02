@@ -112,8 +112,8 @@
             if (!allowedPattern.test(value) && value !== '') {
                 e.target.classList.add('error-flash');
                 const errorOutput = document.getElementById('error');
-                errorOutput.textContent = 'Illegal character \'' + value + '\' entered!';
-                logError('comments', 'Illegal character \'' + value + '\' entered.');
+                errorOutput.textContent = 'Illegal character \'' + value[value.length-1] + '\' entered!';
+                logError('comments', 'Illegal character \'' + value[value.length-1] + '\' entered.');
                 setTimeout(() => {
                     e.target.classList.remove('error-flash');
                     errorOutput.textContent = '';
