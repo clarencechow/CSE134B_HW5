@@ -213,7 +213,7 @@ output {
   border-radius: 5px;
 }
 
-output.error {
+output#error {
   color: red;
 }
 
