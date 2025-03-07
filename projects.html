@@ -40,20 +40,7 @@
         </nav>
     </header>
     <main>
-        <ol>
-            <li>
-                <a href="project1.html">Project 1 (probably would be called by name or descriptive title)</a>
-                <border-tag>
-                    <p>Description about Project 1</p>
-                </border-tag>
-            </li>
-            <li>
-                <a href="project2.html">Project 2 (probably would be called by name or descriptive title)</a>
-                <border-tag>
-                    <p>Description about Project 2</p>
-                </border-tag>
-            </li>
-        </ol>
+        <div class="cards-container"></div>
     </main>
     <div></div>
     <footer>
@@ -105,6 +92,50 @@
             mode = "dark";
             localStorage.setItem("mode", "dark");
         }
+
+        /* Custom Elements HW5 */
+
+        class ProjectCard extends HTMLElement {
+            constructor() {
+                super();
+                this.innerHTML = `
+                    <article>
+                        <h2>${this.getAttribute('title')}</h2>
+                        <picture>
+                            <img src="${this.getAttribute('image')}" alt="${this.getAttribute('alt')}">
+                        </picture>
+                        <p>${this.getAttribute('description')}</p>
+                        <a href="${this.getAttribute('link')}">Learn more</a>
+                    </article>
+                `;
+            }
+        }
+        customElements.define('project-card', ProjectCard);
+
+        function loadProjects() {
+            const container = document.querySelector('.cards-container');
+
+            const localProjects = JSON.parse(localStorage.getItem('projects') || '[]');
+            localProjects.forEach(project => createProjectCard(project, container));
+
+            fetch('projects.json')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(project => createProjectCard(project, container));
+                });
+        }
+
+        function createProjectCard(data, container) {
+            const card = document.createElement('project-card');
+            card.setAttribute('title', data.title);
+            card.setAttribute('image', data.image);
+            card.setAttribute('alt', data.alt);
+            card.setAttribute('description', data.description);
+            card.setAttribute('link', data.link);
+            container.appendChild(card);
+        }
+
+        document.addEventListener('DOMContentLoaded', loadProjects);
     </script>
 </body>
 </html>
