@@ -114,9 +114,6 @@
         function loadProjects() {
             const container = document.querySelector('.cards-container');
 
-            const localProjects = JSON.parse(localStorage.getItem('projects') || '[]');
-            localProjects.forEach(project => createProjectCard(project, container));
-
             fetch('projects.json')
                 .then(response => response.json())
                 .then(data => {
