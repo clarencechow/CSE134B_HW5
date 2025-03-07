@@ -10,6 +10,12 @@
 
   --experiment-a: #F0E68C;
   --experiment-b: #FFD700;
+
+  --card-bg-color: #FFF8E7;
+  --card-border-color: #FFAC1C;
+  --card-text-color: black;
+  --card-padding: 16px;
+  --card-margin: 8px;
 }
 
 /* color-gamut test on experiment tab */
@@ -327,5 +333,50 @@ input:required::before {
     to {
         background-color: rgba(255, 0, 0, 0.3);
     }
+}
+
+/* Project-Card Stuff for HW5 */
+
+body {
+  background-color: #ffdeb5;
+  color: black;
+}
+
+header {
+  background-color: #FFD580;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+project-card {
+  display: block;
+  background-color: var(--card-bg-color);
+  border: 2px solid var(--card-border-color);
+  border-radius: 8px;
+  padding: var(--card-padding);
+  margin: var(--card-margin);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+project-card h2 {
+  margin: 0 0 8px 0;
+}
+
+project-card p {
+  margin: 0 0 16px 0;
+}
+
+project-card a {
+  color: var(--card-border-color);
+  text-decoration: none;
+}
+
+project-card a:hover {
+  text-decoration: underline;
 }
 
