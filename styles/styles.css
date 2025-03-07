@@ -356,7 +356,7 @@ header {
 }
 
 project-card {
-  width: 90vw;
+  width: 80vw;
   display: block;
   background-color: var(--card-bg-color);
   border: 2px solid var(--card-border-color);
