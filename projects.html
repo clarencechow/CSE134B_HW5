@@ -97,16 +97,38 @@
         class ProjectCard extends HTMLElement {
             constructor() {
                 super();
-                this.innerHTML = `
-                    <article>
-                        <h2>${this.getAttribute('title')}</h2>
-                        <picture>
-                            <img src="${this.getAttribute('image')}" alt="${this.getAttribute('alt')}">
-                        </picture>
-                        <p>${this.getAttribute('description')}</p>
-                        <a href="${this.getAttribute('link')}">Learn more</a>
-                    </article>
-                `;
+
+                connectedCallback() {
+
+        			this.h2 = document.createElement('h2');
+        			this.h2.textContent = this.getAttribute('title');
+        			this.appendChild(this.h2);
+        
+        			this.picture = document.createElement('picture');
+                    this.image = document.createElement('img');
+                    this.image.src = this.getAttribute('image');
+                    this.image.alt = this.getAttribute('alt');
+        			this.picture.appendChild(this.image);
+        			this.appendChild(this.picture);
+        
+        			this.p = document.createElement('p');
+        			this.p.textContent = this.getAttribute('description');
+        			this.appendChild(this.p);
+
+                    this.a = document.createElement('a');
+        			this.a.href = this.getAttribute('link');
+                    this.a.textContent = Learn more;
+        			this.appendChild(this.a);
+                }
+                
+                /*this.innerHTML = `
+                    <h2>abcdefg${this.getAttribute('title')}</h2>
+                    <picture>
+                        <img src="${this.getAttribute('image')}" alt="${this.getAttribute('alt')}">
+                    </picture>
+                    <p>${this.getAttribute('description')}</p>
+                    <a href="${this.getAttribute('link')}">Learn more</a>
+                `;*/
             }
         }
         customElements.define('project-card', ProjectCard);
