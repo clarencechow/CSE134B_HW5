@@ -1,14 +1,14 @@
 [
     {
         "title": "Project 1",
-        "image": "images/project1.jpg",
+        "image": "images/project1-small.jpg",
         "alt": "Could not display image for Project 1",
         "description": "Student database for a music school",
         "link": "project1.html"
     },
     {
         "title": "Project 2",
-        "image": "images/project2.jpg",
+        "image": "images/project2-small.jpg",
         "alt": "Could not display image for Project 2",
         "description": "A simple to-do list applicaiton",
         "link": "project2.html"
