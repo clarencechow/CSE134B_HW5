@@ -337,6 +337,7 @@ input:required::before {
 
 /* Project-Card Stuff for HW5 */
 
+
 body {
   background-color: #ffdeb5;
   color: black;
@@ -347,13 +348,15 @@ header {
 }
 
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 16px;
   padding: 16px;
 }
 
 project-card {
+  width: 90vw;
   display: block;
   background-color: var(--card-bg-color);
   border: 2px solid var(--card-border-color);
@@ -379,4 +382,5 @@ project-card a {
 project-card a:hover {
   text-decoration: underline;
 }
+
 
