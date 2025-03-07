@@ -95,6 +95,13 @@
 
         /* Custom Elements HW5 */
 
+        fetch('projects.json')
+        .then(response => response.json())
+        .then(data => {
+            localStorage.setItem('projects', JSON.stringify(data));
+            generateProjectCards(data); })
+        .catch(error => console.error('Error fetching projects:', error));
+
         class ProjectCard extends HTMLElement {
             constructor() {
                 super();
@@ -112,7 +119,7 @@
         }
         customElements.define('project-card', ProjectCard);
 
-        function loadProjects() {
+        /*function loadProjects() {
             const container = document.querySelector('.cards-container');
 
             const localProjects = JSON.parse(localStorage.getItem('projects') || '[]');
@@ -123,7 +130,18 @@
                 .then(data => {
                     data.forEach(project => createProjectCard(project, container));
                 });
-        }
+        }*/
+
+        window.onload = function() {
+            const storedProjects = localStorage.getItem('projects');
+            const container = document.querySelector('.cards-container');
+            
+            if (storedProjects) {
+                projects.forEach(project => {
+                    createProjectCard(project, container)
+                });
+            }
+        };
 
         function createProjectCard(data, container) {
             const card = document.createElement('project-card');
@@ -135,7 +153,7 @@
             container.appendChild(card);
         }
 
-        document.addEventListener('DOMContentLoaded', loadProjects);
+        //document.addEventListener('DOMContentLoaded', loadProjects);
     </script>
 </body>
 </html>
