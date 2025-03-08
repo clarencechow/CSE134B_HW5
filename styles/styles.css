@@ -340,7 +340,7 @@ input:required::before {
 
 body {
   background-color: #ffdeb5;
-  color: black;
+  color: black !important;
 }
 
 header {
