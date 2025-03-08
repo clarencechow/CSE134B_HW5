@@ -40,6 +40,12 @@
         </nav>
     </header>
     <main>
+        <ul>
+            <li><button onclick="loadLocal()">Load Local</button></li>
+            <li><button onclick="loadRemote()">Load Remote</button></li>
+            <li><button onclick="clear()">Clear</button></li>
+        </ul>
+        
         <div class="cards-container"></div>
     </main>
     <div></div>
@@ -145,6 +151,40 @@
         }
 
         document.addEventListener('DOMContentLoaded', loadProjects);
+
+        /* HW5 Part 2 (didn't realize that I didn't have to load files for Part 1) */
+        function loadLocal() {
+            const data = JSON.parse(localStorage.getItem('projects')) || [];
+            const container = document.getElementById('projectContainer');
+            data.forEach(project => createProjectCard(project, container));
+        }
+
+        function loadRemote() {
+            const container = document.getElementById('projectContainer');
+            
+            fetch('[remote not yet implemented]')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(project => createProjectCard(project, container));
+                });
+        }
+
+        function clear() {
+            const container = document.getElementById('projectContainer');
+            container.innerHTML = '';
+        }
+
+        function saveProjects() {
+            fetch('projects.json')
+                .then(response => response.json())
+                .then(data => {
+                    localStorage.setItem('projects', JSON.stringify(data));
+                    console.log('Projects saved to local storage.');
+                })
+                .catch(error => console.error('Error loading projects.json:', error));
+        }
+
+        document.addEventListener('DOMContentLoaded', saveProjects);
     </script>
 </body>
 </html>
