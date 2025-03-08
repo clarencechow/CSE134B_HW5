@@ -43,7 +43,7 @@
         <ul>
             <li><button onclick="loadLocal()">Load Local</button></li>
             <li><button onclick="loadRemote()">Load Remote</button></li>
-            <li><button onclick="clear()">Clear</button></li>
+            <li><button onclick="clearContainer()">Clear</button></li>
         </ul>
         
         <div class="cards-container"></div>
@@ -170,11 +170,9 @@
                 });
         }
 
-        function clear() {
+        function clearContainer() {
             const container = document.querySelector('.cards-container');
-            while (container.firstChild) { 
-                container.removeChild(container.firstChild); 
-            }
+            container.innerHTML('');
             console.log('Container cleared:', container.childNodes.length);
         }
 
