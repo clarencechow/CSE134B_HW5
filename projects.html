@@ -153,14 +153,15 @@
         document.addEventListener('DOMContentLoaded', loadProjects);
 
         /* HW5 Part 2 (didn't realize that I didn't have to load files for Part 1) */
+        
         function loadLocal() {
             const data = JSON.parse(localStorage.getItem('projects')) || [];
-            const container = document.getElementById('projectContainer');
+            const container = document.querySelector('.cards-container');
             data.forEach(project => createProjectCard(project, container));
         }
 
         function loadRemote() {
-            const container = document.getElementById('projectContainer');
+            const container = document.querySelector('.cards-container');
             
             fetch('[remote not yet implemented]')
                 .then(response => response.json())
@@ -170,7 +171,7 @@
         }
 
         function clear() {
-            const container = document.getElementById('projectContainer');
+            const container = document.querySelector('.cards-container');
             container.innerHTML = '';
         }
 
