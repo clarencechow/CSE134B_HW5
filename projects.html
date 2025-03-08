@@ -172,7 +172,9 @@
 
         function clear() {
             const container = document.querySelector('.cards-container');
-            container.innerHTML = '';
+            while (container.firstChild) { 
+                container.removeChild(container.firstChild); 
+            }
         }
 
         function saveProjects() {
