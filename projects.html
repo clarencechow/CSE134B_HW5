@@ -166,7 +166,9 @@
             fetch('https://api.jsonbin.io/v3/b/67ccf50facd3cb34a8f76215')
                 .then(response => response.json())
                 .then(data => {
-                    data.forEach(project => createProjectCard(project, container));
+                    const projects = data.record;
+                    projects.forEach(project => createProjectCard(project, container));
+                    //data.forEach(project => createProjectCard(project, container));
                 });
         }
 
