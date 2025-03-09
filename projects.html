@@ -163,7 +163,7 @@
         function loadRemote() {
             const container = document.querySelector('.cards-container');
             
-            fetch('https://api.jsonbin.io/v3/b/67ccf435acd3cb34a8f761cb')
+            fetch('https://api.jsonbin.io/v3/b/67ccf50facd3cb34a8f76215')
                 .then(response => response.json())
                 .then(data => {
                     data.forEach(project => createProjectCard(project, container));
