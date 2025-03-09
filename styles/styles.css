@@ -383,4 +383,8 @@ project-card a:hover {
   text-decoration: underline;
 }
 
-
+/* Project-Buttons for HW5 */
+#project-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
